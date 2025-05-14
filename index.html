@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Extensions Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="header">
+    <img id="logo" src="assets/images/logo.svg" alt="">
+    <img src="assets/images/icon-sun.svg" alt="">
+  </header>
+
+  <main class="main-content">
+    <div class="top-body">
+      <h1>Extensions List</h1>
+      <div class="filter-controls">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="active">Active</button>
+        <button class="filter-btn" data-filter="inactive">Inactive</button>
+      </div>
+    </div>
+    <div id="extensions-container" class="extensions-container">
+    </div>
+  </main>
+  <script src="scripts.js"></script>
+</body>
+
+</html>
