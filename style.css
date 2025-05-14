@@ -16,7 +16,7 @@ body{
     border-radius: 10px;
     margin-left: 10%;
     text-align: center;
-    border-bottom: 1px solid #252526; /* VS Code panel border */
+    border-bottom: 1px solid #252526;
     margin-bottom: 2rem;
 }
 
@@ -35,18 +35,12 @@ body{
     color: white;
 }
 
-.header h1 {
+.main-content h1 {
     font-size: 2.5rem;
-    color: #ffffff; /* Bright white for headers */
+    color: #ffffff;
 }
 
-.main-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
 
-/* Filter Controls */
 .filter-controls {
     display: flex;
     justify-content: center;
@@ -58,8 +52,8 @@ body{
 .filter-btn {
     padding: 10px 20px;
     border: none;
-    border-radius: 4px; /* VS Code uses squarer corners */
-    background-color: #2d2d2d; /* Button background */
+    border-radius: 4px;
+    background-color: #2d2d2d;
     color: #d4d4d4;
     font-weight: 500;
     cursor: pointer;
@@ -67,15 +61,15 @@ body{
 }
 
 .filter-btn:hover {
-    background-color: #3c3c3c; /* Slightly lighter on hover */
+    background-color: #3c3c3c;
 }
 
 .filter-btn.active {
-    background-color: #0e639c; /* VS Code active selection blue */
+    background-color: #0e639c;
     color: white;
 }
 
-/* Extensions Grid */
+
 .extensions-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -84,23 +78,23 @@ body{
 }
 
 .extension-card {
-    background-color: #252526; /* VS Code sidebar background */
+    background-color: #252526;
     border-radius: 4px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     padding: 20px;
     transition: transform 0.2s, box-shadow 0.2s;
-    border-left: 4px solid #0e639c; /* Active blue by default */
+    border-left: 4px solid #0e639c;
 }
 
 .extension-card.inactive {
-    border-left-color: #f14c4c; /* VS Code error red */
+    border-left-color: #f14c4c;
     opacity: 0.8;
 }
 
 .extension-card:hover {
     transform: translateY(-3px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    background-color: #2a2d2e; /* Slightly lighter hover */
+    background-color: #2a2d2e;
 }
 
 .extension-header {
@@ -114,19 +108,19 @@ body{
     height: 48px;
     margin-right: 15px;
     object-fit: contain;
-    filter: brightness(0.9); /* Slightly dim logos to match theme */
+    filter: brightness(0.9);
 }
 
 .extension-name {
     font-size: 1.2rem;
     font-weight: 500;
     margin: 0;
-    color: #ffffff; /* Bright white for names */
+    color: #ffffff;
 }
 
 .extension-description {
     margin-bottom: 15px;
-    color: #858585; /* VS Code secondary text */
+    color: #858585;
 }
 
 .extension-footer {
@@ -144,18 +138,18 @@ body{
 }
 
 .status-active {
-    background-color: rgba(14, 99, 156, 0.2); /* VS Code blue with opacity */
-    color: #3794ff; /* VS Code light blue */
+    background-color: rgba(14, 99, 156, 0.2);
+    color: #3794ff;
 }
 
 .status-inactive {
-    background-color: rgba(241, 76, 76, 0.2); /* VS Code red with opacity */
-    color: #f14c4c; /* VS Code error red */
+    background-color: rgba(241, 76, 76, 0.2);
+    color: #f14c4c;
 }
 
 .remove-btn {
     background: none;
-    border: 1px solid #3c3c3c; /* Subtle border */
+    border: 1px solid #3c3c3c;
     color: #f14c4c;
     font-weight: 500;
     cursor: pointer;
@@ -169,7 +163,6 @@ body{
     border-color: #f14c4c;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .extensions-container {
         grid-template-columns: 1fr;
@@ -189,7 +182,7 @@ body{
     }
 }
 
-/* Scrollbar styling for VS Code feel */
+
 ::-webkit-scrollbar {
     width: 10px;
 }

@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Fetch extensions data
+    
     fetchExtensions();
     
-    // Set up filter buttons
+
     const filterButtons = document.querySelectorAll('.filter-btn');
     filterButtons.forEach(button => {
         button.addEventListener('click', function() {
@@ -18,11 +18,6 @@ let extensionsData = [];
 
 async function fetchExtensions() {
     try {
-        // In a real app, you would fetch from a URL:
-        // const response = await fetch('data.json');
-        // extensionsData = await response.json();
-        
-        // For this example, we'll use the provided JSON directly
         extensionsData = [
     {
         "logo": "./assets/images/logo-devlens.svg",
@@ -108,7 +103,7 @@ async function fetchExtensions() {
 function renderExtensions(filter = 'all') {
     const container = document.getElementById('extensions-container');
     
-    // Filter extensions based on selection
+    
     const filteredExtensions = extensionsData.filter(ext => {
         if (filter === 'all') return true;
         if (filter === 'active') return ext.isActive;
@@ -116,10 +111,10 @@ function renderExtensions(filter = 'all') {
         return true;
     });
     
-    // Sort active extensions first
+   
     filteredExtensions.sort((a, b) => b.isActive - a.isActive);
     
-    // Generate HTML for each extension
+
     const extensionsHTML = filteredExtensions.map(extension => `
         <div class="extension-card ${extension.isActive ? '' : 'inactive'}">
             <div class="extension-header">
@@ -138,7 +133,7 @@ function renderExtensions(filter = 'all') {
     
     container.innerHTML = extensionsHTML || '<p class="no-results">No extensions found matching your criteria.</p>';
     
-    // Add event listeners to remove buttons
+    
     document.querySelectorAll('.remove-btn').forEach(button => {
         button.addEventListener('click', function() {
             const card = this.closest('.extension-card');
@@ -147,7 +142,7 @@ function renderExtensions(filter = 'all') {
                 card.style.opacity = '0';
                 setTimeout(() => {
                     card.remove();
-                    // In a real app, you would also update the data source
+                    
                 }, 300);
             }
         });
