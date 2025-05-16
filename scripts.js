@@ -112,7 +112,6 @@ function renderExtensions(filter = 'all') {
     });
     
    
-    filteredExtensions.sort((a, b) => b.isActive - a.isActive);
     
 
     const extensionsHTML = filteredExtensions.map(extension => `
@@ -123,10 +122,12 @@ function renderExtensions(filter = 'all') {
             </div>
             <p class="extension-description">${extension.description}</p>
             <div class="extension-footer">
-                <span class="extension-status ${extension.isActive ? 'status-active' : 'status-inactive'}">
-                    ${extension.isActive ? 'Active' : 'Inactive'}
-                </span>
+               
                 <button class="remove-btn">Remove</button>
+                <label class="toggle-switch">
+                    <input type="checkbox" class="toggle-checkbox" ${extension.isActive ? 'checked' : ''}>
+                    <span class="toggle-slider"></span>
+                </label>
             </div>
         </div>
     `).join('');
@@ -134,6 +135,13 @@ function renderExtensions(filter = 'all') {
     container.innerHTML = extensionsHTML || '<p class="no-results">No extensions found matching your criteria.</p>';
     
     
+    document.querySelectorAll('.toggle-checkbox').forEach((checkbox, index) => {
+        checkbox.addEventListener('change', function () {
+            filteredExtensions[index].isActive = this.checked;
+            renderExtensions(filteredExtensions);
+        });
+    });
+
     document.querySelectorAll('.remove-btn').forEach(button => {
         button.addEventListener('click', function() {
             const card = this.closest('.extension-card');
